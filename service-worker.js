@@ -1,11 +1,10 @@
 const CACHE_NAME = "eco-transform-v1";
 
 const urlsToCache = [
-  "/",
-  "/index.html",
-  "/manifest.json",
-  "/offline.html",
-  "https://cdn.tailwindcss.com"
+  "./",
+  "./index.html",
+  "./manifest.json",
+  "./offline.html"
 ];
 
 // Install
