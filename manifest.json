@@ -2,7 +2,7 @@
   "name": "EcoTransform - Waste to Wonderful",
   "short_name": "EcoTransform",
   "start_url": "/WASTE-WORTH/index.html",
-  "scope": "/",
+  "scope": "/WASTE-WORTH/",
   "display": "standalone",
   "background_color": "#3B82F6",
   "theme_color": "#8B5CF6",
