@@ -58,6 +58,7 @@
             <h2 class="text-5xl font-bold text-white drop-shadow-2xl mb-4">
                 Transform Waste into <span class="text-yellow-300">Useful Products</span>
             </h2>
+            <button onclick="installApp()">Install App</button>
             <p class="text-xl text-white/95 max-w-3xl mx-auto font-medium drop-shadow-lg">
                 Upload a photo of your waste items and get AI-powered suggestions for creative upcycling projects
             </p>
@@ -430,6 +431,26 @@
             document.getElementById('results').scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
     </script>
+    <script>
+let deferredPrompt;
+
+window.addEventListener("beforeinstallprompt", (e) => {
+  e.preventDefault();
+  deferredPrompt = e;
+  console.log("Install available");
+});
+
+function installApp() {
+  if (deferredPrompt) {
+    deferredPrompt.prompt();
+    deferredPrompt.userChoice.then(() => {
+      deferredPrompt = null;
+    });
+  } else {
+    alert("Install not ready yet. Try refreshing.");
+  }
+}
+</script>
     <script>
 if ("serviceWorker" in navigator) {
   window.addEventListener("load", () => {
