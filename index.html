@@ -430,6 +430,14 @@
             document.getElementById('results').scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
     </script>
-    <script src="register-sw.js"></script>
+    <script>
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () => {
+    navigator.serviceWorker.register("service-worker.js")
+      .then(() => console.log("PWA Ready"))
+      .catch(err => console.log("SW error:", err));
+  });
+}
+</script>
 </body>
 </html>
